@@ -8,10 +8,10 @@ export default function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path='/profile/details'>
+        <Route exact path='/profile/details'>
           <ProfileDetailes />
         </Route>
-        <Route path='/profile'>
+        <Route exact path='/profile'>
           <Profile />
         </Route>
       </Switch>

@@ -22,19 +22,16 @@ export default function ProfileDetails() {
     <Flex>
       <SideMenu />
       <Container>
-        <Header />
+        <Header title='Мой профиль' />
 
         <Block>Записи на приём</Block>
         <Flex>
 
-          <FlexColumn>
+          <FlexColumn scrollable style={{minWidth: '40%'}}>
             {[...Records]}
           </FlexColumn>
 
-          <FlexColumn>
-            <RecordCard img='https://sun9-50.userapi.com/K1XVlsTO5J3Ij083R5BZuvPaWz4eiz50oadMOw/JeETRGhC_eA.jpg' />
-            <RecordCard img='https://sun9-50.userapi.com/K1XVlsTO5J3Ij083R5BZuvPaWz4eiz50oadMOw/JeETRGhC_eA.jpg' />
-          </FlexColumn>
+          <DatePicker />
 
         </Flex>
       </Container>

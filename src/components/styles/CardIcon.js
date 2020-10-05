@@ -3,11 +3,11 @@ import variables from './Variables';
 
 const CardIcon = styled.div`
   width: 25%;
-  height: 100%;
-  text-align: center;
-  align-self: center;
-  background-color: ${variables.colorSecondary};
-  // background-color: ${props => props.active ? variables.colorSecondary : '#FFFFFF'};
+  display:flex;
+  align-self: stretch;
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default CardIcon;

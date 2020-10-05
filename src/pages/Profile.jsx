@@ -11,6 +11,7 @@ import * as icons from '../components/styles/Icons';
 import CardIcon from '../components/styles/CardIcon';
 import SplitLine from '../components/styles/SplitLine.js';
 import GetUserRecords from '../utils/GetUserRecords.js';
+import InfoCard from '../components/InfoCard.jsx';
 
 export default function Profile() {
   document.title = 'Профиль'
@@ -19,109 +20,97 @@ export default function Profile() {
   useEffect(() => {
     GetUserRecords().then(recs => setRecords(recs));
   }, []);
-  
+
   const [records, setRecords] = useState([]);
 
   // рендер первых двух записей
   const Records = () => {
     let forRender = [];
-    for(let i = 0; i < 2; i++){
-      if(records[i]) forRender.push(<RecordCard key={i} record={records[i]} />)
+    for (let i = 0; i < 2; i++) {
+      if (records[i]) forRender.push(<RecordCard key={i} record={records[i]} />)
     }
     return forRender;
   };
 
   return (
-    <Flex>
-      <SideMenu />
+    <Container>
+        <SideMenu />
+          <Header title='Мой профиль' />
 
-      <Container>
-        <Header />
+          <Block>Записи на приём</Block>
+          <Flex center padding>
+            {Records()}
+            <div style={{ padding: '20px', textAlign: 'center' }}>
+              {records.length > 2 ? <p>Ещё {records.length - 2} записи</p> : null}
+              <a href='/profile/details'>Подробнее</a>
+            </div>
+          </Flex>
 
-        <Block>Записи на приём</Block>
-        <Flex center padding>
-          {Records()}
-          <div style={{padding: '20px'}}>
-            {records.length > 2 ? <p>Ещё {records.length - 2} записи</p> : null}
-            <a href='/profile/details'>Подробнее...</a>
-          </div>
-        </Flex>
+          <Block>Электронная карта</Block>
+          <Grid padding cols={2}>
 
-        <Block>Электронная карта</Block>
-        <Grid padding cols={2}>
+            <InfoCard>
+                <CardIcon>
+                  {icons.PatientInfo()}
+                </CardIcon>
+                <Block padding='20px'>
+                  <h1>Информация о пациенте</h1>
+                  <SplitLine />
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul>
+                </Block>
+            </InfoCard>
+            <InfoCard>
+                <CardIcon>
+                  {icons.TestResult()}
+                </CardIcon>
+                <Block padding='20px'>
+                  <h1>Результаты анализов</h1>
+                  <SplitLine />
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul>
+                </Block>
+            </InfoCard>
+            <InfoCard>
+                <CardIcon>
+                  {icons.AddInfo()}
+                </CardIcon>
+                <Block padding='20px'>
+                  <h1>Добавить информацию</h1>
+                  <SplitLine />
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                  </ul>
+                </Block>
+            </InfoCard>
+            <InfoCard>
+                <CardIcon>
+                  {icons.History()}
+                </CardIcon>
+                <Block padding='20px'>
+                  <h1>История приёмов</h1>
+                  <SplitLine />
+                  <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>1</li>
+                  </ul>
+                </Block>
+            </InfoCard>
 
-          <Card>
-            <Flex>
-              <CardIcon>
-                {icons.PatientInfo()}
-              </CardIcon>
-              <Block padding='20px'>
-                <h1>Информация о пациенте</h1>
-                <SplitLine />
-                <ul>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                </ul>
-              </Block>
-            </Flex>
-          </Card>
-          <Card>
-            <Flex>
-              <CardIcon>
-                {icons.TestResult()}
-              </CardIcon>
-              <Block padding='20px'>
-                <h1>Результаты анализов</h1>
-                <SplitLine />
-                <ul>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                </ul>
-              </Block>
-            </Flex>
-          </Card>
-          <Card>
-            <Flex>
-              <CardIcon>
-                {icons.AddInfo()}
-              </CardIcon>
-              <Block padding='20px'>
-                <h1>Добавить информацию</h1>
-                <SplitLine />
-                <ul>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                </ul>
-              </Block>
-            </Flex>
-          </Card>
-          <Card>
-            <Flex>
-              <CardIcon>
-                {icons.History()}
-              </CardIcon>
-              <Block padding='20px'>
-                <h1>История приёмов</h1>
-                <SplitLine />
-                <ul>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>1</li>
-                </ul>
-              </Block>
-            </Flex>
-          </Card>
-
-        </Grid>
-      </Container>
-
-    </Flex>
+          </Grid>
+    </Container>
   )
 }
