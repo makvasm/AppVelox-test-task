@@ -22,7 +22,7 @@ export default function SideMenu() {
       </Element>
       <Element>
         <Link href="doctors">
-          <Stethoscope  />
+          <Stethoscope />
           <div>Врачи и клиники</div>
         </Link>
       </Element>

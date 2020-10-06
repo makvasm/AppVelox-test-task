@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import Header from '../components/Header.jsx';
 import SideMenu from '../components/SideMenu.jsx';
 import Container from '../components/styles/containers/Container';
@@ -6,7 +7,6 @@ import Flex from '../components/styles/containers/Flex';
 import RecordCard from '../components/RecordCard.jsx';
 import Block from '../components/styles/Block';
 import Grid from '../components/styles/containers/Grid';
-import Card from '../components/styles/Card';
 import * as icons from '../components/styles/Icons';
 import CardIcon from '../components/styles/CardIcon';
 import SplitLine from '../components/styles/SplitLine.js';

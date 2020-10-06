@@ -6,6 +6,7 @@ import variables from './Variables';
 const Card = styled.div`
   position: relative;
   border-radius: ${variables.borderRadius};
+  border: 2px solid transparent;
   background-color: ${variables.layoutBackground};
   margin: 10px;
   flex: 1;
@@ -20,6 +21,9 @@ const Card = styled.div`
 
   &:hover ${CardIcon}, &:hover ${SplitLine} {
     background-color: ${variables.colorBlue};
+  }
+  &:hover {
+    border: 2px solid ${variables.colorBlue};
   }
 `;
 

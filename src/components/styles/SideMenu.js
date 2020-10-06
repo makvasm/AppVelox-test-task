@@ -42,7 +42,7 @@ export const SideMenuElement = styled.div`
 
   margin-bottom: 10px;
   padding: 0 20px;
-  border-left: ${props => props.active ? `3px solid ${variables.colorViolet}` : ''};
+  border-left: ${props => props.active ? `3px solid ${variables.colorViolet}` : '3px solid transparent'};
   background-color: ${props => props.active ? '#ffffff' : variables.colorDarkblue};
 
   &:hover {

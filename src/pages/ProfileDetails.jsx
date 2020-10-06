@@ -25,7 +25,7 @@ export default function ProfileDetails() {
         <Header title='Мой профиль' />
 
         <Block>Записи на приём</Block>
-        <Flex>
+        <Flex justify='space-around'>
 
           <FlexColumn scrollable style={{minWidth: '40%'}}>
             {[...Records]}

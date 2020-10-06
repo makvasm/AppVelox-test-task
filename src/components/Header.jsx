@@ -1,7 +1,7 @@
 import { Header as Head } from './styles/Header';
 
 import React from 'react'
-import { Bell, Search, Eye } from './styles/Icons';
+import { Bell, Search, Eye, Expand } from './styles/Icons';
 import Flex from './styles/containers/Flex';
 import Avatar from './styles/Avatar';
 
@@ -13,7 +13,10 @@ export default function Header({ title }) {
         <Search />
         <Bell />
         <Eye />
-        <Avatar src='https://www.kalashnikov.ru/wp-content/uploads/2020/07/placeholder.png' />
+        <Flex center style={{gap: '5px', width: 'auto'}}>
+          <Avatar src='https://www.kalashnikov.ru/wp-content/uploads/2020/07/placeholder.png' />
+          <Expand />
+        </Flex>
       </Flex>
     </Head>
   )
