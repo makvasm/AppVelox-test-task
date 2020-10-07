@@ -8,8 +8,6 @@ export const SideMenu = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 
   background: ${variables.colorDarkblue};
@@ -24,7 +22,6 @@ export const SideMenuLink = styled.a`
   }
   text-decoration: none;
   display: flex;
-  // justify-content: stretch;
   align-items: center;
   gap: 10px;
 
@@ -37,11 +34,11 @@ export const SideMenuElement = styled.div`
 
   gap: 10px;
   display: flex;
-  // justify-content: stretch;
-  align-items: center;
+  // align-items: center;
 
   margin-bottom: 10px;
-  padding: 0 20px;
+  padding: 5px 20px;
+
   border-left: ${props => props.active ? `3px solid ${variables.colorViolet}` : '3px solid transparent'};
   background-color: ${props => props.active ? '#ffffff' : variables.colorDarkblue};
 
@@ -59,8 +56,6 @@ export const SideMenuElement = styled.div`
 export const SideMenuLogo = styled.div`
   width: 100%;
   height: ${variables.logoHeight};
-  border-left: ${props => props.active ? `3px solid ${variables.colorViolet}` : ''};
-  color: ${props => props.active ? variables.colorViolet : '#ffffff'}
   background-color: ${variables.colorDarkblue};
   overflow: hidden;
 `;

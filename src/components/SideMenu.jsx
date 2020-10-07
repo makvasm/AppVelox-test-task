@@ -38,6 +38,7 @@ export default function SideMenu() {
           <div>Полезно знать</div>
         </Link>
       </Element>
+
       <Element>
         <Button>Подать заявку</Button>
       </Element>

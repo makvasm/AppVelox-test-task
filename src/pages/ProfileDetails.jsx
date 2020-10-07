@@ -8,6 +8,7 @@ import RecordCard from '../components/RecordCard.jsx';
 import Block from '../components/styles/Block';
 import DatePicker from '../components/DatePicker.jsx';
 import GetUserRecords from '../utils/GetUserRecords.js';
+import GoBack from '../components/GoBack.jsx';
 
 export default function ProfileDetails() {
   document.title = 'Записи'
@@ -24,7 +25,12 @@ export default function ProfileDetails() {
       <Container>
         <Header title='Мой профиль' />
 
-        <Block>Записи на приём</Block>
+        <Block>
+          <Flex center style={{ gap: '10px' }}>
+            <GoBack />
+            Записи на приём
+          </Flex>
+        </Block>
         <Flex justify='space-around'>
 
           <FlexColumn scrollable style={{minWidth: '40%'}}>
